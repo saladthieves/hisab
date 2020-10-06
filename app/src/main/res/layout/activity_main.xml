@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".MainActivity">
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_foods" />
+        android:text="@string/home_foods"
+        android:textColor="@color/coloGreen" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,15 +19,21 @@
         android:orientation="horizontal">
 
         <CheckBox
+            android:id="@+id/fetiraCheck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/check_fetira" />
 
         <CheckBox
+            android:id="@+id/fulMedamesCheck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/check_ful_medames" />
     </LinearLayout>
 
@@ -36,58 +43,83 @@
         android:orientation="horizontal">
 
         <CheckBox
+            android:id="@+id/chechebsaCheck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/check_chechebsa" />
 
         <CheckBox
+            android:id="@+id/tibsCheck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="@string/check_tibs_firfir" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_meal_type" />
+        android:layout_marginTop="24dp"
+        android:text="@string/home_meal_type"
+        android:textColor="@color/coloGreen" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/mealTypeSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/meal_types" />
 
     <TextView
+        android:id="@+id/totalPeopleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_total_people" />
+        android:layout_marginTop="24dp"
+        android:text="@string/home_total_people"
+        android:textColor="@color/coloGreen" />
 
     <SeekBar
+        android:id="@+id/totalPeopleSeekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:progress="10" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_waiter_name" />
+        android:layout_marginTop="24dp"
+        android:text="@string/home_waiter_name"
+        android:textColor="@color/coloGreen" />
 
     <EditText
+        android:id="@+id/waiterNameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/home_waiter_name_hint" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp">
 
         <Button
+            android:id="@+id/clearAllButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_button_clear_all" />
 
+        <View
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
         <Button
+            android:id="@+id/calculateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_button_calculate" />
