@@ -17,7 +17,6 @@ class MainActivity : BaseActivity(), CompoundButton.OnCheckedChangeListener,
 
     private lateinit var fetiraCheckBox: CheckBox
     private val controller = Controller()
-    val step = 15
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +32,7 @@ class MainActivity : BaseActivity(), CompoundButton.OnCheckedChangeListener,
         mealTypeSpinner.onItemSelectedListener = this
         val listener = object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                val final = progress * step
-                totalPeopleLabel.text = "Total people: $final"
+                totalPeopleLabel.text = "Total people: $progress"
                 controller.addPeople(progress)
             }
 
@@ -74,4 +72,11 @@ class MainActivity : BaseActivity(), CompoundButton.OnCheckedChangeListener,
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) = Unit
+
+    override fun onResume() {
+        super.onResume()
+        if (::fetiraCheckBox.isInitialized) {
+
+        }
+    }
 }
