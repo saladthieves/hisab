@@ -33,12 +33,23 @@ class Controller(
     }
 
     fun addPeople(people: Int) {
-        peopleDiscount = when(people) {
+        peopleDiscount = when (people) {
             in 0..4 -> 0.0
             in 5..14 -> 0.3
             else -> 0.5
         }
         log()
+    }
+
+    fun getDiscounts(): Double {
+        return meal.discount + peopleDiscount
+    }
+
+    fun calculate(): Double {
+        val total = foods.sumByDouble { it.price }
+        val discounts = getDiscounts() / 10.0
+        val discountedAmount = total * discounts
+        return total - discountedAmount
     }
 
     private fun log() {
